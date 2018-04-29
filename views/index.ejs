@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quotes</title>
+</head>
+<body>
+  <h2>Inspirational Quotes</h2>
+
+  <ul class="quotes">
+  <% for(var i=0; i<quotes.length; i++) {%>
+    <li class="quote">
+      <span><%= quotes[i].name %></span>
+      <span><%= quotes[i].quote %></span>
+    </li>
+  <% } %>
+  </ul>
+
+  <h2>Enter a quote!</h2>
+  <form action="/quotes" method="POST">
+    <input type="text" placeholder="name" name="name">
+    <input type="text" placeholder="quote" name="quote">
+    <button type="submit">Submit</button>
+  </form>
+
+  <div>
+    <h2>Replace last quote written</h2>
+    <button id="update"> Replace </button>
+  </div>
+
+  <div>
+    <h2>Delete first quote</h2>
+    <button id="delete"> Delete </button>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
